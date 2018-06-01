@@ -47,7 +47,7 @@ var obIx = function(obj, ix) {
 
 var keySort = function(a, b, d) {
     d = d !== null ? d : 1;
-    // a = a.toLowerCase(); // this breaks numbers
+    // a = a.toLowerCase(); 
     // b = b.toLowerCase();
     if (a == b)
         return 0;
