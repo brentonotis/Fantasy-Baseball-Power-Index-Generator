@@ -1,3 +1,4 @@
+from collections import Counter
 stats = {}
 stats ['Brenton'] = {'Hits': 20, 'Runs': 19, 'ERA': 1.99}
 stats ['Justin'] = {'Hits': 19, 'Runs': 18, 'ERA': 3.01}
