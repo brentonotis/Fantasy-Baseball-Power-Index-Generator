@@ -19,3 +19,10 @@ print('Runs Rank:', runs_rank)
 era_rank = sorted(era, key=era.get)
 era_rank = {key: rank for rank, key in enumerate(sorted(era, key=era.get), 1)}
 print('ERA Rank:', era_rank)
+
+# combine each ranking number to receive a total ranking numeric value
+total_rank = dict(Counter(hits_rank) + Counter(runs_rank) + Counter(era_rank))
+
+# divide each total ranking value by number of categories (to receive an average ranking value)
+for key, value in total_rank.items():
+    total_rank[key] = value / 3
