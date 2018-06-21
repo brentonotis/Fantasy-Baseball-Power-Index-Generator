@@ -35,3 +35,11 @@ print('Power Rankings:')
 # enumerate sorted avg. value to place numeric rank value next to each user, print/return values
 for count, elem in enumerate(new_rank, 1):
      print(count, elem)
+
+''' Last statement returns:
+Power Rankings:
+1 Cameron
+2 Brenton
+3 Justin
+etc.
+'''
