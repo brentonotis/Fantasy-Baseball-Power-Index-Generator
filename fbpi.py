@@ -12,3 +12,4 @@ print('Runs Rank: %s' % runs_rank)
 era_rank = sorted(era, key = lambda x : era[x])
 print('ERA Rank: %s' % era_rank)
 
+# Going to take an approach using nested dictionary
