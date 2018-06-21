@@ -26,3 +26,12 @@ total_rank = dict(Counter(hits_rank) + Counter(runs_rank) + Counter(era_rank))
 # divide each total ranking value by number of categories (to receive an average ranking value)
 for key, value in total_rank.items():
     total_rank[key] = value / 3
+
+# sort avg. ranking value from least to most
+new_rank = sorted(total_rank, key=lambda x : total_rank[x])
+
+print('Power Rankings:')
+
+# enumerate sorted avg. value to place numeric rank value next to each user, print/return values
+for count, elem in enumerate(new_rank, 1):
+     print(count, elem)
