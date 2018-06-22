@@ -16,21 +16,60 @@ era = {'Aaron':3.866, 'Michael':3.916, 'AustinS':4.358, 'MattV':3.384, 'Cameron'
 whip = {'Aaron':1.197, 'Michael':1.212, 'AustinS':1.281, 'MattV':1.144, 'Cameron':1.244, 'Brenton':1.243, 'AustinM':1.166, 'Luke':1.278, 'MattM':1.211, 'Evan':1.164, 'Cory':1.180, 'Justin':1.226}
 knine = {'Aaron':9.66, 'Michael':8.77, 'AustinS':9.46, 'MattV':9.64, 'Cameron':8.06, 'Brenton':8.94, 'AustinM':9.82, 'Luke':8.70, 'MattM':9.76, 'Evan':8.68, 'Cory':9.46, 'Justin':7.92}
 
-# sort hits from most to least
-hits_rank = sorted(hits, key=hits.get, reverse=True)
+# sort runs from most to least
+runs_rank = sorted(runs, key=runs.get, reverse=True)
 
 # enumerate sorted hits to number them
-hits_rank = {key: rank for rank, key in enumerate(sorted(hits, key=hits.get, reverse=True), 1)}
-
-print('Hits Rank:', hits_rank)
-
-runs_rank = sorted(runs, key=runs.get, reverse=True)
 runs_rank = {key: rank for rank, key in enumerate(sorted(runs, key=runs.get, reverse=True), 1)}
 print('Runs Rank:', runs_rank)
+
+doubles_rank = sorted(doubles, key=doubles.get, reverse=True)
+doubles_rank = {key: rank for rank, key in enumerate(sorted(doubles, key=doubles.get, reverse=True), 1)}
+print('Doubles Rank:', doubles_rank)
+
+tripless_rank = sorted(triples, key=triples.get, reverse=True)
+triples_rank = {key: rank for rank, key in enumerate(sorted(triples, key=triples.get, reverse=True), 1)}
+print('3B Rank:', triples_rank)
+
+hr_rank = sorted(hr, key=hr.get, reverse=True)
+hr_rank = {key: rank for rank, key in enumerate(sorted(hr, key=hr.get, reverse=True), 1)}
+print('HR Rank:', hr_rank)
+
+rbi_rank = sorted(rbi, key=rbi.get, reverse=True)
+rbi_rank = {key: rank for rank, key in enumerate(sorted(rbi, key=rbi.get, reverse=True), 1)}
+print('RBI Rank:', rbi_rank)
+
+sb_rank = sorted(sb, key=sb.get, reverse=True)
+sb_rank = {key: rank for rank, key in enumerate(sorted(sb, key=sb.get, reverse=True), 1)}
+print('SB Rank:', sb_rank)
+
+k_rank = sorted(k, key=k.get, reverse=True)
+k_rank = {key: rank for rank, key in enumerate(sorted(k, key=k.get, reverse=True), 1)}
+print('K Rank:', k_rank)
+
+qs_rank = sorted(qs, key=qs.get, reverse=True)
+qs_rank = {key: rank for rank, key in enumerate(sorted(qs, key=qs.get, reverse=True), 1)}
+print('QS Rank:', qs_rank)
+
+w_rank = sorted(w, key=w.get, reverse=True)
+w_rank = {key: rank for rank, key in enumerate(sorted(w, key=w.get, reverse=True), 1)}
+print('Wins Rank:', w_rank)
+
+sv_rank = sorted(sv, key=sv.get, reverse=True)
+sv_rank = {key: rank for rank, key in enumerate(sorted(sv, key=sv.get, reverse=True), 1)}
+print('Saves Rank:', sv_rank)
 
 era_rank = sorted(era, key=era.get)
 era_rank = {key: rank for rank, key in enumerate(sorted(era, key=era.get), 1)}
 print('ERA Rank:', era_rank)
+
+whip_rank = sorted(whip, key=whip.get)
+whip_rank = {key: rank for rank, key in enumerate(sorted(whip, key=whip.get), 1)}
+print('WHIP Rank:', whip_rank)
+
+knine_rank = sorted(knine, key=knine.get, reverse=True)
+knine_rank = {key: rank for rank, key in enumerate(sorted(knine, key=knine.get, reverse=True), 1)}
+print('K:9 Rank:', knine_rank)
 
 # combine each ranking number to receive a total ranking numeric value
 total_rank = dict(Counter(hits_rank) + Counter(runs_rank) + Counter(era_rank))
@@ -50,8 +89,8 @@ for count, elem in enumerate(new_rank, 1):
 
 ''' Last statement returns:
 Power Rankings:
-1 Cameron
-2 Brenton
-3 Justin
+1 MattM
+2 Aaron
+3 Michael
 etc.
 '''
