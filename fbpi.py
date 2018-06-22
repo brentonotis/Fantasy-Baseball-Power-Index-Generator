@@ -19,7 +19,7 @@ knine = {'Aaron':9.66, 'Michael':8.77, 'AustinS':9.46, 'MattV':9.64, 'Cameron':8
 # sort runs from most to least
 runs_rank = sorted(runs, key=runs.get, reverse=True)
 
-# enumerate sorted hits to number them
+# enumerate sorted runs to number them
 runs_rank = {key: rank for rank, key in enumerate(sorted(runs, key=runs.get, reverse=True), 1)}
 print('Runs Rank:', runs_rank)
 
