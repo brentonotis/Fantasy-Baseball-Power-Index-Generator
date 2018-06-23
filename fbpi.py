@@ -76,7 +76,7 @@ knine_rank = {key: rank for rank, key in enumerate(sorted(knine, key=knine.get, 
 print('K:9 Rank:', knine_rank)
 
 # combine each ranking number to receive a total ranking numeric value
-total_rank = dict(Counter(hits_rank) + Counter(runs_rank) + Counter(era_rank))
+total_rank = dict(Counter(runs_rank) + Counter(doubles_rank) + Counter(triples_rank) + Counter(hr_rank) + Counter(rbi_rank) + Counter(sb_rank) + Counter(avg_rank) + Counter(k_rank) + Counter(qs_rank) + Counter(w_rank) + Counter(sv_rank) + Counter(era_rank) + Counter(whip_rank) + Counter(knine_rank))
 
 # divide each total ranking value by number of categories (to receive an average ranking value)
 for key, value in total_rank.items():
