@@ -43,6 +43,10 @@ sb_rank = sorted(sb, key=sb.get, reverse=True)
 sb_rank = {key: rank for rank, key in enumerate(sorted(sb, key=sb.get, reverse=True), 1)}
 print('SB Rank:', sb_rank)
 
+avg_rank = sorted(avg, key=avg.get, reverse=True)
+avg_rank = {key: rank for rank, key in enumerate(sorted(avg, key=avg.get, reverse=True), 1)}
+print('AVG Rank:', avg_rank)
+
 k_rank = sorted(k, key=k.get, reverse=True)
 k_rank = {key: rank for rank, key in enumerate(sorted(k, key=k.get, reverse=True), 1)}
 print('K Rank:', k_rank)
