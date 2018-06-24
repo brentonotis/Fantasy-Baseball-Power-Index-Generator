@@ -1,15 +1,8 @@
-var obja = [
-  {USER:"BO", HITS:45, RUNS:32, BAVG:.308, ERA:1.08},
-  {USER:"CK", HITS:46, RUNS:35, BAVG:.278, ERA:2.29},
-  {USER:"JW", HITS:42, RUNS:30, BAVG:.282, ERA:1.78},
-  {USER:"AW", HITS:48, RUNS:31, BAVG:.314, ERA:0.98},
-  {USER:"EP", HITS:52, RUNS:33, BAVG:.288, ERA:3.55},
-  {USER:"LL", HITS:44, RUNS:30, BAVG:.254, ERA:4.66},
-  {USER:"CN", HITS:41, RUNS:34, BAVG:.267, ERA:3.92},
-  {USER:"MM", HITS:39, RUNS:32, BAVG:.282, ERA:3.86},
-  {USER:"MV", HITS:46, RUNS:30, BAVG:.246, ERA:2.12},
-  {USER:"AM", HITS:38, RUNS:29, BAVG:.291, ERA:1.47}
-];
+stats = { 
+     "BO":[20, 19, 1.11], 
+     "CK":[19, 21, 1.01], 
+     "JW":[18, 17, 2.23]
+};
 
 var sorto = {
   HITS:"desc",RUNS:"desc", BAVG:"desc", ERA:"asc",
