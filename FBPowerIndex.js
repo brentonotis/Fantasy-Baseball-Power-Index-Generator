@@ -1,12 +1,15 @@
 stats = { 
-     "BO":[20, 19, 1.11], 
-     "CK":[19, 21, 1.01], 
-     "JW":[18, 17, 2.23]
+     "HITS":[20, 19, 1.11], 
+     "RUNS":[19, 21, 1.01], 
+     "ERA":[18, 17, 2.23],
+     "BAVG":[18, 17, 2.23]
 };
 
 var sorto = {
   HITS:"desc",RUNS:"desc", BAVG:"desc", ERA:"asc",
 };
+
+var sorted_stats = {[]}
 
 Array.prototype.keySort = function(keys) {
 
