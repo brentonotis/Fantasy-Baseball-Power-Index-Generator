@@ -27,7 +27,7 @@ doubles_rank = sorted(doubles, key=doubles.get, reverse=True)
 doubles_rank = {key: rank for rank, key in enumerate(sorted(doubles, key=doubles.get, reverse=True), 1)}
 print('Doubles Rank:', doubles_rank)
 
-tripless_rank = sorted(triples, key=triples.get, reverse=True)
+triples_rank = sorted(triples, key=triples.get, reverse=True)
 triples_rank = {key: rank for rank, key in enumerate(sorted(triples, key=triples.get, reverse=True), 1)}
 print('3B Rank:', triples_rank)
 
