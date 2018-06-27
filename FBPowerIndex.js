@@ -14,5 +14,14 @@ var era = {'Aaron':3.866, 'Michael':3.916, 'AustinS':4.358, 'MattV':3.384, 'Came
 var whip = {'Aaron':1.197, 'Michael':1.212, 'AustinS':1.281, 'MattV':1.144, 'Cameron':1.244, 'Brenton':1.243, 'AustinM':1.166, 'Luke':1.278, 'MattM':1.211, 'Evan':1.164, 'Cory':1.180, 'Justin':1.226}
 var knine = {'Aaron':9.66, 'Michael':8.77, 'AustinS':9.46, 'MattV':9.64, 'Cameron':8.06, 'Brenton':8.94, 'AustinM':9.82, 'Luke':8.70, 'MattM':9.76, 'Evan':8.68, 'Cory':9.46, 'Justin':7.92}
 
+// Create new array, push to array
+var sortable_stats = [];
+for (var stat in runs) {
+  sortable_stats.push([stat, runs[stat]]);
+}
 
+// sort new array
+sortable_stats.sort(function(a, b) {
+  return a[1] - b[1];
+});
 
