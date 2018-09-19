@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 public class Fantasy_Power_Index {
 	
+	//set boolean for valueSort direction
 	private static boolean ASC = true;
 	private static boolean DESC = false;
 	
@@ -12,6 +13,7 @@ public class Fantasy_Power_Index {
 		
 		System.out.println("testing...");
 		
+		//Initialize new HashMap
 		Map<String, Integer> stats = new HashMap<>();
 		
 		stats.put("Brenton", 100);
@@ -21,10 +23,12 @@ public class Fantasy_Power_Index {
 		System.out.println("Unsorted: ");
 		printMap(stats);
 		
+		//Prints key/values sorted in ascending order
 		System.out.println("Sorted by ascending value: ");
 		Map<String, Integer> sortAsc = valueSort(stats, ASC);
 		printMap(sortAsc);
 		
+		//Prints key/values in descending order
 		System.out.println("Sorted by descending value: ");
 		Map<String, Integer> sortDesc = valueSort(stats, DESC);
 		printMap(sortDesc);
@@ -32,7 +36,7 @@ public class Fantasy_Power_Index {
 	}
 		
 	public static void printMap(Map<String, Integer> map) {
-		
+		// iterates through data and prints key/value pairs
 		map.forEach((key, value) -> System.out.println("Key: " + key + " Value: " + value)); 
 	
 	}
