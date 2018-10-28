@@ -80,7 +80,7 @@ public class Fantasy_Power_Index {
  		}		
 	}
 	/**
-	 * Helper method, Sorts each statistical category from lowest-highest or vice versa
+	 * Helper method, Sorts each statistical category from lowest-highest or vice versa (sorts by value)
 	 * @param stats - statistical category being evaluated
 	 * @param order - ascending or descending order to be sorted (ASC/DESC variables)
 	 * @return - LinkedHashMap with key/value pairs in sorted order
