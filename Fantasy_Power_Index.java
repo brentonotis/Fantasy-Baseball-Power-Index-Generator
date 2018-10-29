@@ -15,6 +15,9 @@ public class Fantasy_Power_Index {
 	
 	private static boolean ASC = true;
 	private static boolean DESC = false;
+	static int index;
+	static int indexTot;
+	static Map<Integer, String> indexAvg = new HashMap<>();
 	
 	// Driver
 	public static void main (String args[]) {
@@ -35,6 +38,7 @@ public class Fantasy_Power_Index {
 		System.out.println("Sorted Runs: ");
 		System.out.println("-----------");
 		printMap(sortRuns);
+		System.out.println(indexAvg);
 		
 		Map<String, Integer> sortDoubles = valueSort(doubles, DESC);
 		System.out.println("Sorted Doubles: ");
@@ -64,7 +68,10 @@ public class Fantasy_Power_Index {
 		Map<String, Double> sortAvg = valueSortDoubs(avg, DESC);
 		System.out.println("Sorted Avg: ");
 		System.out.println("----------");
-		printMapDoubs(sortAvg);		
+		printMapDoubs(sortAvg);
+		
+		
+			
 	}
 	
 	/**
@@ -74,10 +81,12 @@ public class Fantasy_Power_Index {
 	public static void printMap(Map<String, Integer> map) {
 		
 		int index = 1;
+
 		for (Map.Entry<String, Integer> entry : map.entrySet()){
 			System.out.println(index + " " + entry.getKey() + ": " + entry.getValue());
+			indexAvg.put(index, entry.getKey());
 			index++;
- 		}		
+ 		}	
 	}
 	/**
 	 * Helper method, Sorts each statistical category from lowest-highest or vice versa (sorts by value)
