@@ -5,6 +5,8 @@ package fbpi;
  * Takes each category, sorts by asc or desc order depending on category, enumerates/places numerical value for each user per category,
  * combines each numerical value per category, divides by total number of categories, sorts by numerical ranking value - returns 'power rank'
  * @author Brenton Otis
+ * 
+ *  --> 12/8 stuck on collecting all keys (integers) and adding per value; Trying to do this while copying to new map
  */
 
 import java.util.*;
@@ -18,6 +20,7 @@ public class Fantasy_Power_Index {
 	static int index;
 	static int indexTot;
 	static Map<Integer, String> indexAvg = new HashMap<>();
+	static Map<Integer, String> indexTotal = new HashMap<>();
 	
 	// Driver
 	public static void main (String args[]) {
@@ -44,6 +47,7 @@ public class Fantasy_Power_Index {
 		System.out.println("Sorted Doubles: ");
 		System.out.println("--------------");
 		printMap(sortDoubles);
+		System.out.println(indexAvg);
 		
 		Map<String, Integer> sortTriples = valueSort(triples, DESC);
 		System.out.println("Sorted Triples: ");
@@ -69,9 +73,27 @@ public class Fantasy_Power_Index {
 		System.out.println("Sorted Avg: ");
 		System.out.println("----------");
 		printMapDoubs(sortAvg);
-		
-		
 			
+	}
+	
+	// TODO: method to convert map (int, str) to (str str)? If needed
+	public static void convertToString(Map<Integer, String> map) {
+		
+		for (Map.Entry<Integer, String> entry : map.entrySet()) {
+			//? indexTotal.put(Integer.toString(entry.getKey()), entry.getValue());
+			
+		}
+	}
+	
+	// TODO: method that adds all key(index) integers for each value 
+	public static void getIndexTot(Map<Integer, String> map) {
+		
+		Map<String, String> indexTotal = new HashMap<>();
+		
+		for (Map.Entry<Integer, String> entry : map.entrySet()) {
+			String myKey = Integer.toString(entry.getKey());
+			//? indexTot.put(entry.getKey(), entry.getValue());
+		}
 	}
 	
 	/**
@@ -81,12 +103,20 @@ public class Fantasy_Power_Index {
 	public static void printMap(Map<String, Integer> map) {
 		
 		int index = 1;
-
 		for (Map.Entry<String, Integer> entry : map.entrySet()){
 			System.out.println(index + " " + entry.getKey() + ": " + entry.getValue());
 			indexAvg.put(index, entry.getKey());
 			index++;
- 		}	
+ 		}
+	}
+	// Identical to above printMap helper, but allows for printing Doubles instead of integers (for ba/era/whip/knine categories)
+	public static void printMapDoubs(Map<String, Double> map) {
+			
+		int index = 1;
+		for (Map.Entry<String, Double> entry : map.entrySet()){
+			System.out.println(index + " " + entry.getKey() + ": " + entry.getValue());
+			index++;
+		}
 	}
 	/**
 	 * Helper method, Sorts each statistical category from lowest-highest or vice versa (sorts by value)
@@ -117,15 +147,5 @@ public class Fantasy_Power_Index {
 				? o2.getKey().compareTo(o1.getKey())
 				: o2.getValue().compareTo(o1.getValue()));
 		return list.stream().collect(Collectors.toMap(Entry::getKey,  Entry::getValue, (a, b) -> b, LinkedHashMap::new));				
-	}
-	
-	// Identical to above printMap helper, but allows for printing Doubles instead of integers (for ba/era/whip/knine categories)
-	public static void printMapDoubs(Map<String, Double> map) {
-		
-		int index = 1;
-		for (Map.Entry<String, Double> entry : map.entrySet()){
-			System.out.println(index + " " + entry.getKey() + ": " + entry.getValue());
-			index++;
-		}		
 	}
 }
